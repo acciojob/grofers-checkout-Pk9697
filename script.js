@@ -8,12 +8,14 @@ const getSum = () => {
 	let totalPrice=0
 	prices.forEach((item)=>totalPrice+=Number(item.textContent))
 	  const table=document.querySelector('table')
-	
-	
+	const total=document.getElementById('total')
+	if(total){
+		total.remove()
+	}
 	table.innerHTML+=`
-		 <tr>
-	      <td class="total">Total</td>
-	      <td class="prices">${totalPrice}</td>
+		 <tr id="total">
+	      <td class="item">Total</td>
+	      <td class="prices" id="ans">${totalPrice}</td>
 	    </tr>
 	`
 };
